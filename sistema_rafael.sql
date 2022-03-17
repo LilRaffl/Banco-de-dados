@@ -15,6 +15,7 @@ use tbsistema;
 
 create table tbdemandamensal(
 mes int(11),
+
 ano int(11),
 demanda int(11),
 previsao decimal(9.2),
@@ -22,13 +23,16 @@ tb_tipo_sanguineo_cod_tipo_sanguinio int(11),
 tb_produtos_cod_produto int (11)
 );
 
+insert into tbdemandamensal()
+
 create table tbtiposanguineo(
 cod_tipo_sanguineo int(11),
 descricao_tipo varchar (45)
 );
 
 create table tbdoadores(
-identidade int(10),
+codigo int,
+cpf int(10),
 nome varchar(45),
 endereco varchar(45),
 tb_tipo_sanguineo_cod_tipo_sanguinio int(11),
@@ -39,6 +43,15 @@ estado_civil varchar(45),
 email varchar(45),
 telefone varchar(45)
 );
+
+insert into tbdoadores(codigo,nome,cpf,telefone,endereco,data_nacimento,cidade,uf,estado_civil,email,tb_tipo_sanguineo_cod_tipo_sanguinio)
+values(1,'Teixeira','123.456.789','(11) 96455-7546','rua nao sei aonde ','2001/00/20','Sao paulo','sp','morto/casado','tex@.com','o');
+
+
+select * from tbdoadores;
+
+
+
 
 create table tbsaida(
 nome_paciente varchar(100),
